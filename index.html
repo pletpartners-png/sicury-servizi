@@ -601,7 +601,7 @@ a{ color:inherit; }
   transform-style:preserve-3d;
   transform:rotateX(var(--rx)) rotateY(var(--ry));
   transition:transform .5s cubic-bezier(.2,.7,.3,1);
-  animation:orbita 16s ease-in-out infinite alternate;
+  animation:orbita 11s ease-in-out infinite alternate;
   will-change:transform;
 }
 .scudo3d__corpo span{
@@ -610,8 +610,8 @@ a{ color:inherit; }
   backface-visibility:hidden;
 }
 @keyframes orbita{
-  from{ transform:rotateX(calc(var(--rx) + 5deg)) rotateY(calc(var(--ry) - 22deg)); }
-  to  { transform:rotateX(calc(var(--rx) - 5deg)) rotateY(calc(var(--ry) + 22deg)); }
+  from{ transform:rotateX(calc(var(--rx) + 6deg)) rotateY(calc(var(--ry) - 28deg)); }
+  to  { transform:rotateX(calc(var(--rx) - 6deg)) rotateY(calc(var(--ry) + 28deg)); }
 }
 .scudo3d::before{
   content:""; position:absolute; inset:-22%;
@@ -737,7 +737,7 @@ a{ color:inherit; }
 .scudo-sfondo__corpo{
   position:absolute; inset:0;
   transform-style:preserve-3d;
-  animation:orbita-lenta 34s linear infinite;
+  animation:orbita-lenta 15s ease-in-out infinite;
   will-change:transform;
 }
 .scudo-sfondo__corpo span{
@@ -746,9 +746,9 @@ a{ color:inherit; }
   backface-visibility:hidden;
 }
 @keyframes orbita-lenta{
-  from{ transform:rotateY(-26deg); }
-  50% { transform:rotateY(26deg); }
-  to  { transform:rotateY(-26deg); }
+  from{ transform:rotateY(-34deg); }
+  50% { transform:rotateY(34deg); }
+  to  { transform:rotateY(-34deg); }
 }
 
 /* il contenuto sta sopra il marchio */
