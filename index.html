@@ -20,15 +20,19 @@
    Palette derivata dallo stemma (blu notte + stella ambra)
    ========================================================= */
 :root{
-  --notte:   #0A1420;   /* fondo, l'uniforme di notte */
-  --acciaio: #131F30;   /* superfici */
-  --bordo:   #24344A;   /* linee */
-  --nebbia:  #92A5BE;   /* testo secondario */
-  --carta:   #EDF1F6;   /* testo primario */
-  --ambra:   #F2B33D;   /* stella dello stemma \2014  unico accento */
-  --ambra-s: #C98C22;
-  --acciaio-t: rgba(19,31,48,.90);
-  --notte-t:   rgba(10,20,32,.90);
+  /* Palette derivata dallo stemma ufficiale: smalto blu cobalto e bordo cromato */
+  --notte:   #070D1E;   /* fondo: il velluto su cui posa la spilla */
+  --acciaio: #0E1A33;   /* superfici, un blu piu' profondo */
+  --bordo:   #1E2E50;   /* linee */
+  --nebbia:  #93A4C4;   /* testo secondario, grigio-azzurro */
+  --carta:   #EEF2F8;   /* testo primario */
+  --ambra:   #3D6CF5;   /* cobalto dello smalto: il colore delle azioni (nome storico della variabile) */
+  --ambra-s: #2A50C9;
+  --argento: #C9D3E0;   /* cromo del bordo: etichette, filetti, cifre */
+  --argento-c:#EEF2F7;
+  --cromo:   linear-gradient(180deg, #F6F8FB 0%, #C3CDDA 48%, #8F9DB0 52%, #DCE3EC 100%);
+  --acciaio-t: rgba(14,26,51,.90);
+  --notte-t:   rgba(7,13,30,.90);
 
   --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --body:    "Public Sans", "Segoe UI", system-ui, sans-serif;
@@ -94,7 +98,7 @@ a{ color:inherit; }
   font-size:.7rem;
   letter-spacing:.2em;
   text-transform:uppercase;
-  color:var(--ambra);
+  color:var(--argento);
   margin-bottom:1.25rem;
 }
 .eyebrow::before{
@@ -116,8 +120,8 @@ a{ color:inherit; }
   text-decoration:none; border:1px solid transparent; border-radius:2px;
   transition:background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
 }
-.btn--amber{ background:var(--ambra); color:#12203A; }
-.btn--amber:hover{ background:#FFC759; transform:translateY(-1px); }
+.btn--amber{ background:var(--ambra); color:#fff; }
+.btn--amber:hover{ background:#5A83FF; transform:translateY(-1px); }
 .btn--ghost{ border-color:var(--bordo); color:var(--carta); }
 .btn--ghost:hover{ border-color:var(--ambra); color:var(--ambra); }
 
@@ -244,14 +248,14 @@ a{ color:inherit; }
   margin-top:clamp(48px,7vw,88px);
   border-top:1px solid var(--bordo);
   border-bottom:1px solid var(--bordo);
-  background:linear-gradient(180deg, rgba(242,179,61,.045), transparent);
+  background:linear-gradient(180deg, rgba(61,108,245,.06), transparent);
   display:flex; align-items:stretch;
 }
 .registro__label{
   flex:none; display:flex; align-items:center;
   padding:0 20px;
   font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--notte); background:var(--ambra); font-weight:500;
+  color:#fff; background:var(--ambra); font-weight:500;
 }
 .registro__viewport{ overflow:hidden; flex:1; padding:14px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
 .registro__track{
@@ -264,7 +268,7 @@ a{ color:inherit; }
   padding:0 34px; white-space:nowrap;
   border-right:1px solid var(--bordo);
 }
-.registro__track li b{ color:var(--ambra); font-weight:500; margin-right:12px; }
+.registro__track li b{ color:var(--argento); font-weight:500; margin-right:12px; }
 .registro:hover .registro__track{ animation-play-state:paused; }
 @keyframes scroll-registro{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){
@@ -290,7 +294,7 @@ a{ color:inherit; }
   font-family:var(--display); font-variation-settings:"wdth" 112;
   font-weight:700; font-size:1.06rem; letter-spacing:-.012em;
 }
-.cred__k::before{ content:"\2605"; color:var(--ambra); font-size:.62rem; }
+.cred__k::before{ content:"\2605"; color:var(--argento); font-size:.62rem; }
 .cred__v{ display:block; font-size:.83rem; line-height:1.55; color:var(--nebbia); }
 @media (max-width:860px){ .credenziali__grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:480px){
@@ -346,7 +350,7 @@ a{ color:inherit; }
   content:"";
   position:absolute; inset:0;
   background:
-    radial-gradient(120% 90% at 70% 10%, rgba(242,179,61,.10), transparent 60%),
+    radial-gradient(120% 90% at 70% 10%, rgba(61,108,245,.12), transparent 60%),
     repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 2px, transparent 2px 9px);
   pointer-events:none;
 }
@@ -366,8 +370,8 @@ a{ color:inherit; }
   content:attr(data-slot);
   position:absolute; top:14px; left:14px;
   font-family:var(--mono); font-size:.62rem; letter-spacing:.1em;
-  color:var(--ambra); opacity:.62;
-  border:1px dashed rgba(242,179,61,.4); padding:4px 8px;
+  color:var(--argento); opacity:.62;
+  border:1px dashed rgba(201,211,224,.4); padding:4px 8px;
 }
 .shot.has-img::after{ content:none; }
 
@@ -378,7 +382,7 @@ a{ color:inherit; }
 @media (max-width:560px){ .gallery{ grid-template-columns:1fr; } .gallery .shot{ aspect-ratio:4/3; } }
 
 .stampa{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 28px; margin-top:40px; padding-top:26px; border-top:1px solid var(--bordo); }
-.stampa__label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ambra); }
+.stampa__label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--argento); }
 .stampa ul{ display:flex; flex-wrap:wrap; gap:12px 28px; list-style:none; margin:0; padding:0; }
 .stampa li{ font-family:var(--display); font-variation-settings:"wdth" 100; font-weight:600; font-size:1rem; color:var(--nebbia); }
 
@@ -408,13 +412,13 @@ a{ color:inherit; }
   padding:15px 0 15px 26px; border-bottom:1px solid var(--bordo);
   font-size:.98rem; position:relative;
 }
-.listone li::before{ content:"\2605 "; position:absolute; left:0; top:15px; color:var(--ambra); font-size:.72rem; }
+.listone li::before{ content:"\2605 "; position:absolute; left:0; top:15px; color:var(--argento); font-size:.72rem; }
 @media (max-width:900px){ .formazione{ grid-template-columns:1fr; } }
 
 /* ---------- contatti ---------- */
 .contatti{
   padding-block:clamp(72px,9vw,120px);
-  background:radial-gradient(90% 130% at 12% 0%, rgba(242,179,61,.12), transparent 62%);
+  background:radial-gradient(90% 130% at 12% 0%, rgba(61,108,245,.14), transparent 62%);
   border-top:1px solid var(--bordo);
 }
 .contatti__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,5vw,72px); align-items:start; }
@@ -477,7 +481,7 @@ a{ color:inherit; }
   transition:border-color .16s ease, background .16s ease, color .16s ease;
 }
 .chip:hover{ border-color:var(--nebbia); }
-.chip[aria-pressed="true"]{ background:var(--ambra); border-color:var(--ambra); color:#12203A; font-weight:600; }
+.chip[aria-pressed="true"]{ background:var(--ambra); border-color:var(--ambra); color:#fff; font-weight:600; }
 
 .conf__esito{
   border:1px solid var(--bordo); background:var(--notte-t);
@@ -492,7 +496,7 @@ a{ color:inherit; }
   font-size:.94rem; position:relative;
 }
 .esito__lista li:first-child{ border-top:1px solid var(--bordo); }
-.esito__lista li::before{ content:"\2605 "; position:absolute; left:0; top:13px; color:var(--ambra); font-size:.68rem; }
+.esito__lista li::before{ content:"\2605 "; position:absolute; left:0; top:13px; color:var(--argento); font-size:.68rem; }
 .esito__lista li b{ display:block; font-weight:600; }
 .esito__lista li span{ color:var(--nebbia); font-size:.85rem; }
 
@@ -520,7 +524,7 @@ a{ color:inherit; }
 /* ================= BARRA DI AVANZAMENTO ================= */
 .avanzamento{
   position:fixed; top:0; left:0; height:2px; width:0;
-  background:linear-gradient(90deg, var(--ambra-s), var(--ambra));
+  background:linear-gradient(90deg, var(--ambra), var(--argento-c));
   z-index:200; transition:width .08s linear;
 }
 
@@ -534,14 +538,15 @@ a{ color:inherit; }
 .num__v{
   font-family:var(--display); font-variation-settings:"wdth" 116;
   font-weight:800; font-size:clamp(2.8rem,5.8vw,4.8rem); line-height:.9; letter-spacing:-.035em;
-  color:var(--ambra); font-variant-numeric:tabular-nums;
+  font-variant-numeric:tabular-nums;
+  background:var(--cromo); -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 .num__k{
   font-family:var(--mono); font-size:.68rem; letter-spacing:.17em;
   text-transform:uppercase; color:var(--nebbia);
   margin-top:16px; padding-top:14px; border-top:1px solid var(--bordo);
 }
-.num:hover .num__k{ border-top-color:var(--ambra); }
+.num:hover .num__k{ border-top-color:var(--argento); }
 .num__k{ transition:border-color .3s ease; }
 @media (max-width:760px){ .numeri__grid{ grid-template-columns:repeat(2,1fr); gap:32px 1px; } }
 
@@ -575,7 +580,7 @@ a{ color:inherit; }
 .hero__campo{
   position:absolute; inset:0; z-index:-2;
   background:
-    radial-gradient(58% 62% at 74% 46%, rgba(242,179,61,.16), transparent 66%),
+    radial-gradient(58% 62% at 74% 46%, rgba(61,108,245,.22), transparent 66%),
     radial-gradient(90% 90% at 18% 8%, #16243A, transparent 62%),
     var(--notte);
 }
@@ -615,7 +620,7 @@ a{ color:inherit; }
 }
 .scudo3d::before{
   content:""; position:absolute; inset:-22%;
-  background:radial-gradient(50% 50% at 50% 50%, rgba(242,179,61,.22), transparent 70%);
+  background:radial-gradient(50% 50% at 50% 50%, rgba(61,108,245,.30), transparent 70%);
   filter:blur(28px);
   animation:pulsa 6s ease-in-out infinite alternate;
 }
@@ -686,7 +691,7 @@ a{ color:inherit; }
   padding:22px 24px;
 }
 .caro__cap{ font-family:var(--mono); font-size:.8rem; line-height:1.5; color:#DCE5F0; max-width:62ch; }
-.caro__cont{ font-family:var(--mono); font-size:.78rem; color:var(--ambra); font-variant-numeric:tabular-nums; flex:none; }
+.caro__cont{ font-family:var(--mono); font-size:.78rem; color:var(--argento); font-variant-numeric:tabular-nums; flex:none; }
 
 .caro__punti{ display:flex; gap:8px; flex-wrap:wrap; }
 .caro__punti button{
@@ -779,7 +784,7 @@ a{ color:inherit; }
   transition:color .18s ease, border-color .18s ease;
 }
 .suono:hover{ color:var(--carta); border-color:var(--nebbia); }
-.suono[aria-pressed="true"]{ color:var(--ambra); border-color:var(--ambra); }
+.suono[aria-pressed="true"]{ color:var(--argento-c); border-color:var(--ambra); background:rgba(61,108,245,.18); }
 
 .suono__barre{ display:flex; align-items:flex-end; gap:2px; height:13px; }
 .suono__barre i{
