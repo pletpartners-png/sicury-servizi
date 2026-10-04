@@ -11,9 +11,6 @@
 <title>Sicury Servizi</title>
 </head>
 <body>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
    SICURY SERVIZI \2014  sistema visivo
@@ -34,9 +31,9 @@
   --acciaio-t: rgba(14,26,51,.90);
   --notte-t:   rgba(7,13,30,.90);
 
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body:    "Public Sans", "Segoe UI", system-ui, sans-serif;
-  --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --body:    Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --mono:    Arial, "Helvetica Neue", Helvetica, sans-serif;
 
   --wrap: 1180px;
   --pad: clamp(20px, 5vw, 56px);
@@ -44,7 +41,7 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; }
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
 body{
@@ -62,7 +59,7 @@ body{
 
 h1,h2,h3{
   font-family:var(--display);
-  font-variation-settings:"wdth" 118;
+  font-variant-numeric:tabular-nums;
   font-weight:800;
   line-height:.98;
   letter-spacing:-0.028em;
@@ -73,7 +70,6 @@ h1{ font-size:clamp(2.25rem, 3.9vw, 3.45rem); }
 h2{ font-size:clamp(1.95rem, 3.4vw, 3.05rem); }
 h3{
   font-size:1.02rem; font-weight:700;
-  font-variation-settings:"wdth" 104;
   letter-spacing:-.004em; line-height:1.28;
 }
 p{ margin:0; }
@@ -147,7 +143,7 @@ a{ color:inherit; }
 .brand__img{ display:block; width:100%; height:auto; }
 .brand__img[hidden]{ display:none; }
 .brand__text{ display:flex; flex-direction:column; line-height:1.16; }
-.brand__text strong{ font-family:var(--display); font-variation-settings:"wdth" 116; font-weight:700; font-size:1.02rem; letter-spacing:-.012em; }
+.brand__text strong{ font-family:var(--display); font-weight:700; font-size:1.02rem; letter-spacing:-.012em; }
 .brand__text em{ font-style:normal; font-family:var(--mono); font-size:.6rem; letter-spacing:.19em; text-transform:uppercase; color:var(--nebbia); margin-top:2px; }
 
 .topnav{ display:flex; gap:30px; }
@@ -291,7 +287,7 @@ a{ color:inherit; }
 }
 .cred__k{
   display:flex; align-items:baseline; gap:9px;
-  font-family:var(--display); font-variation-settings:"wdth" 112;
+  font-family:var(--display);
   font-weight:700; font-size:1.06rem; letter-spacing:-.012em;
 }
 .cred__k::before{ content:"\2605"; color:var(--argento); font-size:.62rem; }
@@ -399,7 +395,7 @@ a{ color:inherit; }
 .stampa{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 28px; margin-top:40px; padding-top:26px; border-top:1px solid var(--bordo); }
 .stampa__label{ font-family:var(--mono); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--argento); }
 .stampa ul{ display:flex; flex-wrap:wrap; gap:12px 28px; list-style:none; margin:0; padding:0; }
-.stampa li{ font-family:var(--display); font-variation-settings:"wdth" 100; font-weight:600; font-size:1rem; color:var(--nebbia); }
+.stampa li{ font-family:var(--display); font-weight:600; font-size:1rem; color:var(--nebbia); }
 
 /* ---------- copertura ---------- */
 .copertura{ display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(36px,5vw,72px); }
@@ -413,7 +409,7 @@ a{ color:inherit; }
 .regione h3{ color:var(--ambra); font-size:.72rem; font-family:var(--mono); font-weight:500; letter-spacing:.14em; text-transform:uppercase; margin-bottom:16px; }
 .regione ul{ list-style:none; margin:0; padding:0; }
 .regione li{
-  font-family:var(--display); font-variation-settings:"wdth" 105;
+  font-family:var(--display);
   font-weight:600; font-size:1.22rem; line-height:1.5; letter-spacing:-.005em;
 }
 @media (max-width:900px){ .copertura{ grid-template-columns:1fr; } }
@@ -445,7 +441,7 @@ a{ color:inherit; }
 }
 .datarow:hover{ padding-left:10px; border-bottom-color:var(--ambra); }
 .datarow__k{ font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--nebbia); }
-.datarow__v{ font-family:var(--display); font-variation-settings:"wdth" 106; font-weight:600; font-size:clamp(1.05rem,1.9vw,1.4rem); text-align:right; }
+.datarow__v{ font-family:var(--display); font-weight:600; font-size:clamp(1.05rem,1.9vw,1.4rem); text-align:right; }
 @media (max-width:820px){ .contatti__grid{ grid-template-columns:1fr; } }
 
 /* ---------- footer ---------- */
@@ -551,7 +547,7 @@ a{ color:inherit; }
 }
 .num{ display:flex; flex-direction:column; gap:0; padding-right:24px; }
 .num__v{
-  font-family:var(--display); font-variation-settings:"wdth" 116;
+  font-family:var(--display);
   font-weight:800; font-size:clamp(2.8rem,5.8vw,4.8rem); line-height:.9; letter-spacing:-.035em;
   font-variant-numeric:tabular-nums;
   background:var(--cromo); -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -1397,14 +1393,14 @@ a{ color:inherit; }
       <p><b>Periodo di conservazione.</b> I dati sono trattati per il tempo necessario a conseguire la finalit&agrave; per cui sono raccolti. In particolare: i dati di navigazione sono conservati dal fornitore di hosting per il periodo tecnico necessario alla sicurezza del servizio; i dati di contatto sono conservati per il tempo occorrente a gestire la richiesta e comunque non oltre <b>24 mesi</b>, salvo l&rsquo;instaurarsi di un rapporto contrattuale, nel qual caso valgono i termini di legge in materia fiscale e civilistica. Alla scadenza i dati sono cancellati o resi anonimi.</p>
 
       <h3>Finalit&agrave; del trattamento dei dati raccolti</h3>
-      <p>I dati dell&rsquo;utente sono trattati per le seguenti finalit&agrave;: <b>erogazione e sicurezza del sito web</b>; <b>riscontro alle richieste di contatto</b> ed esecuzione di misure precontrattuali; <b>visualizzazione di contenuti da piattaforme esterne</b> (caratteri tipografici).</p>
+      <p>I dati dell&rsquo;utente sono trattati per le seguenti finalit&agrave;: <b>erogazione e sicurezza del sito web</b>; <b>riscontro alle richieste di contatto</b> ed esecuzione di misure precontrattuali.</p>
       <p>Il sito non effettua attivit&agrave; di profilazione, non invia comunicazioni commerciali e non adotta processi decisionali automatizzati ai sensi dell&rsquo;art. 22 del Regolamento.</p>
 
       <h3>Dettagli sul trattamento dei dati personali</h3>
       <p><b>Contattare l&rsquo;utente.</b> I recapiti pubblicati sul sito consentono all&rsquo;utente di contattare il titolare per telefono o per posta elettronica. I dati comunicati sono trattati per rispondere alla richiesta. Dati personali trattati: nome, email, numero di telefono, contenuto del messaggio. Base giuridica: esecuzione di misure precontrattuali (art. 6, par. 1, lett. b).</p>
       <p><b>Configuratore di presidio.</b> Lo strumento presente sul sito elabora le risposte dell&rsquo;utente <b>interamente sul dispositivo dell&rsquo;utente stesso</b> e le utilizza unicamente per precompilare un messaggio nel programma di posta elettronica installato. Nessun dato inserito nel configuratore viene trasmesso a questo sito n&eacute; a terzi: l&rsquo;eventuale invio avviene a cura e per scelta dell&rsquo;utente, tramite il proprio fornitore di posta.</p>
       <p><b>Hosting e infrastruttura.</b> Il sito &egrave; pubblicato tramite <b>GitHub Pages</b>, servizio fornito da GitHub, Inc. (Stati Uniti), che agisce in qualit&agrave; di responsabile del trattamento. Il fornitore registra i dati tecnici di connessione (indirizzo IP, user agent, data e ora, risorsa richiesta) per erogare il servizio e garantirne la sicurezza. Dati personali trattati: dati di utilizzo, indirizzo IP. Luogo del trattamento: Stati Uniti e altri Paesi. Base giuridica: legittimo interesse del titolare a erogare il sito in sicurezza (art. 6, par. 1, lett. f).</p>
-      <p><b>Visualizzazione di contenuti da piattaforme esterne &mdash; Google Fonts.</b> I caratteri tipografici del sito sono richiesti ai server di Google Fonts, servizio fornito da Google Ireland Limited. Per consegnare il carattere, il browser dell&rsquo;utente trasmette a Google il proprio indirizzo IP. Dati personali trattati: dati di utilizzo, indirizzo IP. Luogo del trattamento: Irlanda e Stati Uniti. Base giuridica: legittimo interesse del titolare a presentare il sito con una resa tipografica uniforme (art. 6, par. 1, lett. f).</p>
+      <p><b>Caratteri tipografici.</b> Il sito non carica caratteri da server esterni: utilizza i caratteri gi&agrave; presenti sul dispositivo dell&rsquo;utente. Nessun dato viene trasmesso a fornitori terzi per la resa tipografica.</p>
 
       <h3>Ulteriori informazioni sul trattamento dei dati personali</h3>
       <p><b>Archiviazione locale (localStorage).</b> Il sito salva nella memoria locale del browser due sole preferenze tecniche, impostate dall&rsquo;utente: l&rsquo;attivazione o meno della musica di sottofondo e l&rsquo;aspetto chiaro o scuro. Tali informazioni restano sul dispositivo dell&rsquo;utente, non vengono trasmesse ad alcun destinatario e non consentono di identificare la persona. Possono essere rimosse in ogni momento svuotando i dati del sito dalle impostazioni del browser.</p>
